@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://cd7l817qbf5xl"]
+
+[ext_resource type="Script" uid="uid://csxf0fgrlb6oa" path="res://Scripts/player.gd" id="1_kyqiw"]
+[ext_resource type="SpriteFrames" uid="uid://crpuy8wrrutk1" path="res://Misc/terrorist_frames.tres" id="2_5ixxa"]
+[ext_resource type="Script" uid="uid://duvqkow2dsm3u" path="res://Scripts/gun_pivot.gd" id="3_gntrk"]
+[ext_resource type="Script" uid="uid://di6o55gk8xpui" path="res://Scripts/camera_handler.gd" id="3_nn08x"]
+[ext_resource type="PackedScene" uid="uid://di4i66wqrg454" path="res://Scenes/Guns/rifle.tscn" id="4_dewec"]
+[ext_resource type="Texture2D" uid="uid://clviqh36td2k4" path="res://img/pistolBullet.png" id="5_5ixxa"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kne1u"]
+light_mode = 2
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_kne1u"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("AnimatedSprite2D:animation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("AnimatedSprite2D:flip_h")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("GunPivot:rotation")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_5ixxa"]
+properties/0/path = NodePath(".:health")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:kills")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_kne1u"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.213873, 0.815029)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e80uo"]
+gradient = SubResource("Gradient_kne1u")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kne1u"]
+radius = 5.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e80uo"]
+size = Vector2(8, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxr5p"]
+size = Vector2(10, 8)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nn08x"]
+light_mode = 2
+
+[node name="Player" type="CharacterBody2D" unique_id=992190781]
+light_mask = 2
+visibility_layer = 2
+material = SubResource("CanvasItemMaterial_kne1u")
+motion_mode = 1
+script = ExtResource("1_kyqiw")
+is_terrorist = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2130912852]
+light_mask = 2
+visibility_layer = 2
+use_parent_material = true
+sprite_frames = ExtResource("2_5ixxa")
+animation = &"run"
+autoplay = "idle"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=368427843]
+enabled = false
+zoom = Vector2(3, 3)
+limit_enabled = false
+position_smoothing_enabled = true
+script = ExtResource("3_nn08x")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=508862159]
+replication_config = SubResource("SceneReplicationConfig_kne1u")
+
+[node name="StatsSync" type="MultiplayerSynchronizer" parent="." unique_id=118634774]
+replication_config = SubResource("SceneReplicationConfig_5ixxa")
+
+[node name="GunPivot" type="Node2D" parent="." unique_id=660919076]
+rotation = -0.113635376
+script = ExtResource("3_gntrk")
+
+[node name="Rifle" parent="GunPivot" unique_id=626254403 instance=ExtResource("4_dewec")]
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1274105510]
+energy = 0.1
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_e80uo")
+texture_scale = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=189936159]
+visible = false
+position = Vector2(0, 1)
+rotation = 1.5708
+shape = SubResource("CircleShape2D_kne1u")
+
+[node name="HitZones" type="Node2D" parent="." unique_id=782980959]
+visible = false
+
+[node name="Head" type="Area2D" parent="HitZones" unique_id=1653554711]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitZones/Head" unique_id=865438674]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_e80uo")
+
+[node name="Body" type="Area2D" parent="HitZones" unique_id=463506906]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitZones/Body" unique_id=1683937993]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_cxr5p")
+
+[node name="Control" type="Control" parent="." unique_id=1856263090]
+light_mask = 2
+visibility_layer = 2
+material = SubResource("CanvasItemMaterial_nn08x")
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control" unique_id=890186698]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -2.0
+offset_top = 6.0
+offset_right = 2.0
+offset_bottom = 10.0
+grow_horizontal = 2
+nine_patch_stretch = true
+texture_under = ExtResource("5_5ixxa")
+texture_progress = ExtResource("5_5ixxa")
+tint_under = Color(1, 1, 1, 0.313726)
+
+[node name="Label" type="Label" parent="Control" unique_id=139978565]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "bl"
+
+[connection signal="area_entered" from="HitZones/Body" to="." method="_on_body_area_entered"]

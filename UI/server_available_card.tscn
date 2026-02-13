@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cifyf4rbtvtyc"]
+
+[ext_resource type="Theme" uid="uid://dfl6cpd5yuajm" path="res://UI/DefaultTheme.tres" id="1_jc8on"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m2dy2"]
+font_size = 14
+font_color = Color(1, 1, 1, 0.31764707)
+
+[node name="MarginContainer" type="MarginContainer" unique_id=1456956974]
+offset_right = 200.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1859970155]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("1_jc8on")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1015413709]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = -3
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1600240692]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Hagura's room"
+uppercase = true
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1806898623]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "PLAYERS: 1"
+label_settings = SubResource("LabelSettings_m2dy2")
+
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=354411871]
+layout_mode = 2
+text = "JOIN"
+
+[node name="ServerAvailableCard" type="Control" parent="HBoxContainer" unique_id=1875690835]
+layout_mode = 2

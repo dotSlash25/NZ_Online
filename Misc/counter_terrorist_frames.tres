@@ -1,0 +1,154 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://5rahvapbi72f"]
+
+[ext_resource type="Texture2D" uid="uid://c1yn8is7yib04" path="res://img/enemy2.png" id="1_jod1r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgxeh"]
+atlas = ExtResource("1_jod1r")
+region = Rect2(0, 40, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ta3k"]
+atlas = ExtResource("1_jod1r")
+region = Rect2(16, 40, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jxhk"]
+atlas = ExtResource("1_jod1r")
+region = Rect2(32, 40, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw64s"]
+atlas = ExtResource("1_jod1r")
+region = Rect2(48, 40, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c31e8"]
+atlas = ExtResource("1_jod1r")
+region = Rect2(64, 40, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrjto"]
+atlas = ExtResource("1_jod1r")
+region = Rect2(80, 40, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20d7d"]
+atlas = ExtResource("1_jod1r")
+region = Rect2(0, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_astxv"]
+atlas = ExtResource("1_jod1r")
+region = Rect2(16, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6y2e"]
+atlas = ExtResource("1_jod1r")
+region = Rect2(32, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vfct"]
+atlas = ExtResource("1_jod1r")
+region = Rect2(48, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqh7p"]
+atlas = ExtResource("1_jod1r")
+region = Rect2(64, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qewr"]
+atlas = ExtResource("1_jod1r")
+region = Rect2(0, 20, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfrdj"]
+atlas = ExtResource("1_jod1r")
+region = Rect2(16, 20, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k0s4"]
+atlas = ExtResource("1_jod1r")
+region = Rect2(32, 20, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27qsp"]
+atlas = ExtResource("1_jod1r")
+region = Rect2(48, 20, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyunf"]
+atlas = ExtResource("1_jod1r")
+region = Rect2(64, 20, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhcoi"]
+atlas = ExtResource("1_jod1r")
+region = Rect2(80, 20, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1belm"]
+atlas = ExtResource("1_jod1r")
+region = Rect2(96, 20, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmwpk"]
+atlas = ExtResource("1_jod1r")
+region = Rect2(112, 20, 16, 20)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgxeh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ta3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jxhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw64s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c31e8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrjto")
+}],
+"loop": true,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20d7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_astxv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6y2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vfct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqh7p")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qewr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfrdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k0s4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27qsp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyunf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhcoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1belm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmwpk")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]

@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b0bbnkndhe5vr"]
+
+[ext_resource type="Script" uid="uid://xmba48jju6up" path="res://Scripts/touch_controls.gd" id="1_atovs"]
+[ext_resource type="Script" uid="uid://cg1fykfau4k1v" path="res://addons/virtual_joystick_plus/virtual_joystick_plus.gd" id="2_k4ucm"]
+[ext_resource type="Texture2D" uid="uid://bcsiny2t2sas3" path="res://img/android_joystick.png" id="3_jdwba"]
+[ext_resource type="Texture2D" uid="uid://ebtwcvqgqgcv" path="res://addons/virtual_joystick_plus/resources/textures/stick_texture_5.png" id="4_30d4u"]
+
+[node name="TouchControls" type="CanvasLayer" unique_id=837763772]
+script = ExtResource("1_atovs")
+
+[node name="left_stick" type="Control" parent="." unique_id=1905345487]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -300.0
+offset_right = 300.0
+grow_vertical = 0
+pivot_offset = Vector2(150, 150)
+script = ExtResource("2_k4ucm")
+joystick_mode = 1
+visibility_mode = 1
+deadzone = 0.05
+joystick_texture = ExtResource("3_jdwba")
+joystick_opacity = 0.3
+stick_use_textures = false
+stick_texture = ExtResource("4_30d4u")
+stick_color = Color(0.20511743, 0.20511743, 0.20511743, 1)
+stick_opacity = 0.2
+metadata/_custom_type_script = "uid://cg1fykfau4k1v"
+
+[node name="right_stick" type="Control" parent="." unique_id=947866076]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -300.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(150, 150)
+script = ExtResource("2_k4ucm")
+joystick_mode = 1
+visibility_mode = 1
+deadzone = 0.05
+joystick_texture = ExtResource("3_jdwba")
+joystick_opacity = 0.3
+stick_use_textures = false
+stick_texture = ExtResource("4_30d4u")
+stick_color = Color(0.20511743, 0.20511743, 0.20511743, 1)
+stick_opacity = 0.2
+metadata/_custom_type_script = "uid://cg1fykfau4k1v"

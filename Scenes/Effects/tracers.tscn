@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfxirckd4o3w8"]
+
+[ext_resource type="Script" uid="uid://cei662vqi7u25" path="res://Scripts/tracers.gd" id="1_8ixr6"]
+
+[node name="Tracers" type="Node2D"]
+script = ExtResource("1_8ixr6")
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 0.3
+antialiased = true

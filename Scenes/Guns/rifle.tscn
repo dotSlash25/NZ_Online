@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://di4i66wqrg454"]
+
+[ext_resource type="PackedScene" uid="uid://cnkwng8x4h41o" path="res://Scenes/Virtual/gun_base.tscn" id="1_uwcn2"]
+[ext_resource type="Texture2D" uid="uid://bherj480ff0jf" path="res://img/gunsAlt.png" id="2_5ggfc"]
+[ext_resource type="Texture2D" uid="uid://d3bqbi4e3hvy6" path="res://img/crosshair.png" id="3_5ggfc"]
+
+[sub_resource type="Gradient" id="Gradient_wgtb6"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wv50r"]
+gradient = SubResource("Gradient_wgtb6")
+
+[node name="Rifle" unique_id=1899154453 instance=ExtResource("1_uwcn2")]
+max_bullets = 24
+magazines = 96
+automatic = true
+firerate = 0.1
+base_inaccuracy = 6.0
+inaccuracy_gain = 1.6
+inaccuracy_falloff = 0.9
+reload_time = 1.0
+damage = 32.0
+headshot_multiplier = 2.0
+shoot_range = 200.0
+scope = 1.0
+kickback = 2.0
+
+[node name="Sprite" parent="." index="0" unique_id=842127284]
+position = Vector2(4, 0)
+texture = ExtResource("2_5ggfc")
+region_enabled = true
+region_rect = Rect2(13, 0, 12, 3)
+
+[node name="Muzzle" parent="Sprite" index="0" unique_id=1937594975]
+position = Vector2(6, 0)
+
+[node name="Crosshair" parent="Sprite/Muzzle" index="1" unique_id=157046701]
+position = Vector2(50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite/Muzzle/Crosshair" index="0" unique_id=1624950436]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_5ggfc")
+
+[node name="RayCast2D" parent="Sprite" index="1" unique_id=1508949359]
+position = Vector2(6, 0)
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="2" unique_id=938050195]
+editor_only = true
+texture = SubResource("GradientTexture2D_wv50r")
+texture_scale = 2.59

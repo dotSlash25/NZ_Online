@@ -1,0 +1,71 @@
+[gd_resource type="Theme" format=3 uid="uid://dfl6cpd5yuajm"]
+
+[ext_resource type="FontFile" uid="uid://crww53pk4nwah" path="res://Fonts/MagdaCleanMono Regular.otf" id="1_77c7j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u07aq"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.019607844, 0.3019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vgsa"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.019607844, 0.3019608, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_77c7j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d72k3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_77c7j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u07aq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77c7j"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.019607844, 0.3019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d72k3"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.019607844, 0.3019608, 0.6156863)
+
+[resource]
+default_font = ExtResource("1_77c7j")
+Button/colors/font_color = Color(1, 0.019607844, 0.3019608, 1)
+Button/colors/font_hover_color = Color(0.11764706, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.11764706, 0, 0, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_u07aq")
+Button/styles/normal = SubResource("StyleBoxFlat_2vgsa")
+Button/styles/pressed = SubResource("StyleBoxFlat_u07aq")
+ItemList/constants/v_separation = 20
+ItemList/font_sizes/font_size = 24
+ItemList/styles/focus = SubResource("StyleBoxTexture_77c7j")
+ItemList/styles/hovered = SubResource("StyleBoxEmpty_d72k3")
+ItemList/styles/panel = SubResource("StyleBoxEmpty_77c7j")
+ItemList/styles/selected = SubResource("StyleBoxEmpty_u07aq")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_77c7j")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_d72k3")

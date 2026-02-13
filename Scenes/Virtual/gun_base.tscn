@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cnkwng8x4h41o"]
+
+[ext_resource type="Script" uid="uid://d1hfyurnttq8i" path="res://Scenes/Virtual/gun_base.gd" id="1_hps4d"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h13on"]
+light_mode = 2
+
+[node name="GunBase" type="Node2D" unique_id=1943658326]
+light_mask = 2
+visibility_layer = 2
+material = SubResource("CanvasItemMaterial_h13on")
+script = ExtResource("1_hps4d")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=842127284]
+use_parent_material = true
+
+[node name="Muzzle" type="Marker2D" parent="Sprite" unique_id=1937594975]
+use_parent_material = true
+
+[node name="MuzzleFlash" type="Sprite2D" parent="Sprite/Muzzle" unique_id=353782449]
+use_parent_material = true
+
+[node name="Crosshair" type="Node2D" parent="Sprite/Muzzle" unique_id=157046701]
+
+[node name="RayCast2D" type="RayCast2D" parent="Sprite" unique_id=1508949359]
+target_position = Vector2(0, 0)
+collide_with_areas = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=54714041]
